@@ -1,0 +1,36 @@
+/* Reusable turn-in component; all styles scoped to avoid assignment collisions. */
+.iaca-submission { --iaca-ink:#18332d; --iaca-muted:#50655e; --iaca-accent:#166b50; --iaca-line:#d8e2dc; --iaca-soft:#f1f6f2; background:#fff; border:1px solid var(--iaca-line); border-radius:18px; padding:25px; color:var(--iaca-ink); font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; box-shadow:0 10px 30px #173b2910; }
+.iaca-submission * { box-sizing:border-box; }
+.iaca-submission [hidden] { display:none !important; }
+.iaca-submission .iaca-brand { font-size:11px; letter-spacing:.13em; font-weight:800; color:var(--iaca-accent); margin-bottom:9px; }
+.iaca-submission .iaca-title { font-size:22px; line-height:1.25; margin:0 0 22px; letter-spacing:-.025em; }
+.iaca-submission h3 { font-size:19px; margin:0 0 8px; }
+.iaca-submission p { margin:0 0 14px; }
+.iaca-submission label { display:block; font-size:14px; font-weight:650; margin:14px 0; }
+.iaca-submission input:not([type=checkbox]),.iaca-submission select { display:block; width:100%; margin-top:6px; padding:12px; min-height:48px; background:#fff; color:var(--iaca-ink); border:1px solid #aabdb3; border-radius:8px; font:inherit; }
+.iaca-submission input:focus-visible,.iaca-submission select:focus-visible,.iaca-submission button:focus-visible { outline:3px solid #78a88d; outline-offset:3px; }
+.iaca-submission .iaca-check { display:flex; gap:10px; align-items:flex-start; font-weight:450; font-size:13px; }
+.iaca-submission input[type=checkbox] { flex-shrink:0; width:18px; height:18px; accent-color:var(--iaca-accent); margin:1px 0 0; }
+.iaca-submission .iaca-hint { font-size:12px; color:var(--iaca-muted); line-height:1.5; margin-top:10px; }
+.iaca-submission .iaca-small { color:var(--iaca-muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:3px; }
+.iaca-submission .iaca-person { font-size:19px; font-weight:750; overflow-wrap:anywhere; margin-bottom:4px; }
+.iaca-submission button { font:inherit; cursor:pointer; border-radius:9px; border:0; padding:13px 16px; line-height:1.3; font-size:14px; font-weight:750; }
+.iaca-submission button:disabled { cursor:default; opacity:.6; }
+.iaca-submission .iaca-primary { background:var(--iaca-accent); color:#fff; width:100%; }
+.iaca-submission .iaca-primary:hover:not(:disabled) { background:#10533e; }
+.iaca-submission .iaca-turn-in { font-size:20px; min-height:58px; letter-spacing:.025em; }
+.iaca-submission .iaca-secondary { background:var(--iaca-soft); color:var(--iaca-ink); border:1px solid var(--iaca-line); font-size:11px; min-height:44px; }
+.iaca-submission .iaca-link { background:transparent; padding:5px 0; text-align:left; color:var(--iaca-accent); text-decoration:underline; text-underline-offset:3px; font-size:13px; }
+.iaca-submission .iaca-status { padding:16px; background:var(--iaca-soft); border:1px solid var(--iaca-line); border-radius:11px; margin:22px 0 16px; }
+.iaca-submission .iaca-status strong { display:block; font-size:16px; margin-bottom:6px; }
+.iaca-submission .iaca-status p { font-size:13px; margin:0; line-height:1.55; }
+.iaca-submission .iaca-actions { display:grid; gap:9px; }
+.iaca-submission .iaca-warning,.iaca-submission .iaca-errors { color:#6e3918; background:#fff6e9; padding:13px; border:1px solid #ebcca6; border-radius:8px; font-size:13px; }
+.iaca-submission .iaca-errors { padding-left:30px; }
+.iaca-submission .iaca-errors li + li { margin-top:5px; }
+.iaca-submission[data-iaca-state=received] .iaca-status { background:#e4f4e9; border-color:#78aa8b; }
+.iaca-submission[data-iaca-state=received] .iaca-status strong { color:#145238; font-size:23px; }
+.iaca-submission[data-iaca-state=pending] .iaca-status,.iaca-submission[data-iaca-state=error] .iaca-status,.iaca-submission[data-iaca-state=conflict] .iaca-status { background:#fff6e9; border-color:#ebcca6; }
+.iaca-submission[data-iaca-state=sending] .iaca-status { border-color:#699e84; }
+@media (prefers-reduced-motion:no-preference) { .iaca-submission button { transition:background-color .15s; } }
+@media (max-width:480px) { .iaca-submission { padding:20px; border-radius:12px; } }

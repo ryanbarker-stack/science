@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-identity="anonymous_id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Project Observation · Barker Science</title>
+  <link rel="stylesheet" href="../client/iaca-submission.css">
+  <link rel="stylesheet" href="assignment.css">
+  <script defer src="../client/iaca-submission.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="assignment.js"></script>
+</head>
+<body>
+  <header><p class="eyebrow">IACA · PROJECT PRACTICE</p><h1>Project Observation</h1><p>Use the class-only ID your teacher gave you. Complete the activity, then press TURN IN. You do not need to enter your name.</p></header>
+  <p id="setup-note" class="setup-note">Teacher setup preview: the submission service has not been connected. Draft saving works; a real TURNED IN receipt requires the deployed backend.</p>
+  <main class="layout">
+    <aside id="submission" aria-label="Identity and turn in"></aside>
+    <section id="activity" class="activity-card" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">Compare two sample plants.</h2>
+      <p>These are practice measurements from two seedlings after one week. Describe the measurements; they do not tell us what caused the difference.</p>
+      <div class="sample"><div><span>Plant A</span><b>12 cm</b></div><div><span>Plant B</span><b>8 cm</b></div></div>
+      <div class="task"><label for="observation"><span class="number">1</span>Write one observation about the two plants.</label><textarea id="observation" maxlength="5000" placeholder="I notice that…"></textarea></div>
+      <div class="task"><label for="choice"><span class="number">2</span>Which plant is taller?</label><select id="choice"><option value="">Choose one</option><option value="plant_a">Plant A</option><option value="plant_b">Plant B</option></select></div>
+      <div class="task"><label for="measurement"><span class="number">3</span>What is the difference between their heights?</label><input id="measurement" inputmode="decimal" maxlength="40" placeholder="Enter a number"><small>Use centimeters (cm). Enter the number only.</small></div>
+    </section>
+  </main>
+  <footer>This practice uses your class-only ID. Keep names and other personal details out of your project answers.</footer>
+  <noscript><p>JavaScript is required to save and turn in this activity. Ask your teacher for help.</p></noscript>
+</body>
+</html>

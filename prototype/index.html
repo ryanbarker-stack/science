@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-identity="student_name">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Light & Data · Barker Science</title>
+  <link rel="stylesheet" href="../client/iaca-submission.css">
+  <link rel="stylesheet" href="assignment.css">
+  <script defer src="../client/iaca-submission.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="assignment.js"></script>
+</head>
+<body>
+  <header><p class="eyebrow">IACA · SCIENCE PRACTICE</p><h1>Light & Data</h1><p>Confirm your name and class period, complete this short practice activity, then press TURN IN.</p></header>
+  <p id="setup-note" class="setup-note">Teacher setup preview: the submission service has not been connected. Draft saving works; a real TURNED IN receipt requires the deployed backend.</p>
+  <main class="layout">
+    <aside id="submission" aria-label="Identity and turn in"></aside>
+    <section id="activity" class="activity-card" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">Read the data. Record what you notice.</h2>
+      <p>These sample measurements show the surface temperatures of two stars. Use only the numbers shown here.</p>
+      <div class="sample"><div><span>Star A</span><b>6,000 K</b></div><div><span>Star B</span><b>3,000 K</b></div></div>
+      <div class="task"><label for="observation"><span class="number">1</span>Write one observation about the two temperatures.</label><textarea id="observation" maxlength="5000" placeholder="I notice that…"></textarea></div>
+      <div class="task"><label for="choice"><span class="number">2</span>Which star has the higher surface temperature?</label><select id="choice"><option value="">Choose one</option><option value="star_a">Star A</option><option value="star_b">Star B</option></select></div>
+      <div class="task"><label for="measurement"><span class="number">3</span>What is the difference between their temperatures?</label><input id="measurement" inputmode="decimal" maxlength="40" placeholder="Enter a number"><small>Use kelvin (K). Enter the number only.</small></div>
+    </section>
+  </main>
+  <footer>This practice submits to Barker Science. Google Classroom’s assignment status is managed separately.</footer>
+  <noscript><p>JavaScript is required to save and turn in this activity. Ask your teacher for help.</p></noscript>
+</body>
+</html>
