@@ -273,9 +273,25 @@
       confirming = false; render();
       if (identity && !conflict && !record.pending) { const first = workRoot.querySelector('input:not([disabled]),textarea:not([disabled]),select:not([disabled]),button:not([disabled])'); if (first) first.focus(); }
     }
-    function endpointReady() {
-      try { const u = new URL(config.endpoint); return u.protocol === 'https:' && u.hostname === 'script.google.com' && /^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(u.pathname) && !u.search && !u.hash; } catch (_) { return false; }
-    }
+function endpointReady() {
+  try {
+    const u = new URL(config.endpoint);
+
+    const validPath =
+      /^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(u.pathname) ||
+      /^\/a\/macros\/[^/]+\/s\/[A-Za-z0-9_-]+\/exec$/.test(u.pathname);
+
+    return (
+      u.protocol === 'https:' &&
+      u.hostname === 'script.google.com' &&
+      validPath &&
+      !u.search &&
+      !u.hash
+    );
+  } catch (_) {
+    return false;
+  }
+}
     function validateReceipt(response, pending) {
       const receipt = response.receipt;
       return response.ok === true && response.requestId === pending.requestId && receipt && UUID.test(receipt.submissionId) && receipt.requestId === pending.requestId && receipt.assignmentId === assignment.id && receipt.assignmentVersion === assignment.version && Number.isInteger(receipt.attempt) && receipt.attempt > 0 && typeof receipt.receivedAt === 'string' && Number.isFinite(Date.parse(receipt.receivedAt)) && typeof receipt.duplicate === 'boolean';
